@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./stylesheet/application.scss">
+    <link rel="stylesheet" href="./stylesheet/application.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <meta charset="utf-8">
     <title>Alarm Clock</title>
@@ -9,24 +10,27 @@
 
   <body>
     <div class="clock-container">
-      <div id="clock" class="clock"></div>
+      <div class="clock-border">
+        <div id="clock" class="clock"></div>
+      </div>
     </div>
 
     <div class="alarm-container">
-      <h1>Set An Alarm</h1>
+      <h1>Alarm Clock</h1>
+
       <form id="alarm-form">
         <div class="alarm-inputs">
-          <input id="alarm-form-hour" class="alarm-input">
-          <input id="alarm-form-minute" class="alarm-input">
-          <button id="am-btn" class="alarm-period" type="button" name="button">
+          <input id="alarmHr" class="alarm-input" placeholder="HR">
+          <input id="alarmMin" class="alarm-input" placeholder="MIN">
+          <button id="am-btn" class="alarm-period" type="button" value="AM">
             AM
           </button>
-          <button id="pm-btn" class="alarm-period" type="button" name="button">
+          <button id="pm-btn" class="alarm-period" type="button" value="PM">
             PM
           </button>
         </div>
 
-        <button class="alarm-submit-btn" form="alarm-form" type="button" name="button">
+        <button class="alarm-submit-btn" form="alarm-form" type="submit" name="button">
           SET ALARM
         </button>
       </form>
@@ -38,4 +42,8 @@
   </body>
 
   <script src="./javascript/clock.js"></script>
+  <script src="./javascript/alarm.js"></script>
+  <script src="./javascript/alarmapp.js"></script>
+  <script src="./javascript/alarmcontroller.js"></script>
+  <script src="./javascript/main.js"></script>
 </html>

@@ -1,9 +1,9 @@
-function showClock() {
-  let date = new Date();
+function Clock() {
+  let time = new Date();
 
   document.getElementById('clock').innerText =
-    date.toLocaleTimeString('en-US');
-    setTimeout(showClock, 1000);
+    time.toLocaleTimeString('en-US');
+    setTimeout(Clock, 1000);
 }
 
-showClock();
+Clock();

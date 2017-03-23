@@ -1,14 +1,17 @@
 body {
+  background-color: #dce3eb; /*baby blue*/
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
   height: 97vh;
   font-family: sans-serif;
+  color: #303133; /*slate*/
+
 }
 
 h1 {
   font-size: 40px;
   letter-spacing: 2px;
+  font-family: 'Lobster', cursive;
 }
 
 .clock-container {
@@ -16,16 +19,25 @@ h1 {
   flex-direction: column;
   height: 100%;
   width: 50%;
-  border: 1px solid black;
   justify-content: center;
   align-items: center;
 }
 
-.clock {
-  padding: 20px;
+.clock-border {
   font-size: 80px;
   font-weight: bold;
   letter-spacing: 5px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.clock {
+  margin: 40px;
+  padding: 20px;
+  background-color: #e5e5e5;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 .alarm-container {
@@ -33,7 +45,6 @@ h1 {
   flex-direction: column;
   height: 100%;
   width: 50%;
-  border: 1px solid black;
   justify-content: center;
   align-items: center;
 }
@@ -44,12 +55,12 @@ form {
   justify-content: center;
   align-items: center;
   width: 60%;
-  height: 40%;
+  height: 30%;
 }
 
 .alarm-inputs {
   display: flex;
-  height: 40%;
+  height: 50%;
   justify-content: center;
   align-items: center;
   flex-direction: row;
