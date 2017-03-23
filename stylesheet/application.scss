@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  height: 97vh;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  padding: 20px;
+  border: 1px solid black;
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.alarm-container {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  border: 1px solid black;
+}
