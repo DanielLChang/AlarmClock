@@ -20,14 +20,18 @@
 
       <form id="alarm-form">
         <div class="alarm-inputs">
-          <input id="alarmHr" class="alarm-input" placeholder="HR">
-          <input id="alarmMin" class="alarm-input" placeholder="MIN">
-          <button id="am-btn" class="alarm-period" type="button" value="AM">
-            AM
-          </button>
-          <button id="pm-btn" class="alarm-period" type="button" value="PM">
-            PM
-          </button>
+          <div class="input-container">
+            <input id="alarmHr" class="alarm-input" maxlength="2" placeholder="HR">
+            <input id="alarmMin" class="alarm-input" maxlength="2" placeholder="MIN">
+          </div>
+          <div id="alarm-period-btns" class="input-container">
+            <button id="am-btn" class="alarm-period active-period" type="button" value="AM">
+              AM
+            </button>
+            <button id="pm-btn" class="alarm-period" type="button" value="PM">
+              PM
+            </button>
+          </div>
         </div>
 
         <button class="alarm-submit-btn" form="alarm-form" type="submit" name="button">
@@ -35,7 +39,7 @@
         </button>
       </form>
       <div class="alarm-list">
-        <h2>Alarms</h2>
+
       </div>
     </div>
 
