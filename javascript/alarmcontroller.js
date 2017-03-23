@@ -9,7 +9,6 @@ AlarmController.prototype.addPeriodBtnListener = function(el) {
     this.alarmView.selectPeriodBtn(e.target);
     this.alarmApp.period = e.target.value;
   }.bind(this));
-  console.log(this.alarmApp.period);
 }
 
 AlarmController.prototype.submitAlarmFormListener = function(el) {
@@ -24,6 +23,7 @@ AlarmController.prototype.submitAlarmFormListener = function(el) {
       if (this.alarmApp.isUnique(newAlarm)) {
         this.alarmApp.addAlarm(newAlarm);
         this.alarmApp.sortList();
+        this.alarmView.displayAlarms(this.alarmApp.alarmList);
       } else {
         alert("Alarm already exists");
       }
