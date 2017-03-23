@@ -1,11 +1,6 @@
 function AlarmApp() {
-  this.clock = new Clock();
   this.alarmList = [];
   this.period = 'AM';
-}
-
-AlarmApp.prototype.setTime = function(time) {
-  this.clock.time = time;
 }
 
 AlarmApp.prototype.addAlarm = function(alarm) {
@@ -24,14 +19,25 @@ AlarmApp.prototype.isUnique = function(alarm) {
   return true;
 }
 
-AlarmApp.prototype.sortList = function() {
+AlarmApp.prototype.checkAlarms = function() {
+  let time = new Date();
+  let length = this.alarmList.length;
+
+  for (let i = 0; i < length; i++) {
+    let alarm = this.alarmList[i];
+    if (alarm.matches(time)) {
+      return i;
+    }
+  }
+  return false;
 }
 
-AlarmApp.prototype.checkAlarms = function() {
-  let alert = false;
+AlarmApp.prototype.alertAlarm = function(alarm) {
+  alert(`It is now ${alarm.toString()}`);
+}
 
-  let last = this.alarmList.length - 1;
-  if (alarm.matches(this.clock.time)) alert = true;
-
-  return alert;
+AlarmApp.prototype.removeAlarm = function(idx) {
+  let beforeIdx = this.alarmList.slice(0, idx);
+  let afterIdx = this.alarmList.slice(idx + 1);
+  this.alarmList = beforeIdx.concat(afterIdx);
 }

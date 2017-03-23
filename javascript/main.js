@@ -10,6 +10,7 @@ function main() {
 
   controller.addPeriodBtnListener(periodBtns);
   controller.submitAlarmFormListener(alarmForm);
+  controller.addAlarmListener();
 }
 
 main();

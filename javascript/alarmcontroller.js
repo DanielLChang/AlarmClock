@@ -22,7 +22,6 @@ AlarmController.prototype.submitAlarmFormListener = function(el) {
     if (newAlarm.isValid()) {
       if (this.alarmApp.isUnique(newAlarm)) {
         this.alarmApp.addAlarm(newAlarm);
-        this.alarmApp.sortList();
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
       } else {
         alert("Alarm already exists");
@@ -30,7 +29,17 @@ AlarmController.prototype.submitAlarmFormListener = function(el) {
     } else {
       alert("Invalid input");
     }
-
-    console.log(this.alarmApp.alarmList);
   }.bind(this));
+}
+
+AlarmController.prototype.addAlarmListener = function() {
+  setInterval(function() {
+    let idx = this.alarmApp.checkAlarms();
+    if (idx) {
+      let alarm = this.alarmApp.alarmList[idx];
+      this.alarmApp.alertAlarm(alarm);
+      this.alarmApp.removeAlarm(idx)
+      this.alarmView.displayAlarms(this.alarmApp.alarmList);
+    }
+  }.bind(this), 1000);
 }
