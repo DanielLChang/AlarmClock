@@ -9,14 +9,33 @@
 
   <body>
     <div class="clock-container">
-      <h1>CURRENT TIME</h1>
       <div id="clock" class="clock"></div>
     </div>
 
     <div class="alarm-container">
+      <h1>Set An Alarm</h1>
+      <form id="alarm-form">
+        <div class="alarm-inputs">
+          <input id="alarm-form-hour" class="alarm-input">
+          <input id="alarm-form-minute" class="alarm-input">
+          <button id="am-btn" class="alarm-period" type="button" name="button">
+            AM
+          </button>
+          <button id="pm-btn" class="alarm-period" type="button" name="button">
+            PM
+          </button>
+        </div>
+
+        <button class="alarm-submit-btn" form="alarm-form" type="button" name="button">
+          SET ALARM
+        </button>
+      </form>
+      <div class="alarm-list">
+        <h2>Alarms</h2>
+      </div>
     </div>
 
-
-    <script src="./javascript/clock.js"></script>
   </body>
+
+  <script src="./javascript/clock.js"></script>
 </html>
