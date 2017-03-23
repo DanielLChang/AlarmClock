@@ -1,10 +1,11 @@
 function main() {
   let alarmForm = document.getElementById('alarm-form');
-  let alarmPeriod = document.getElementById('am-btn');
+  let activePeriodBtn = document.getElementById('am-btn');
   let periodBtns = document.getElementById('alarm-period-btns');
 
   let app = new AlarmApp();
-  let controller = new AlarmController(app);
+  let view = new AlarmView(activePeriodBtn);
+  let controller = new AlarmController(app, view);
 
   controller.addPeriodBtnListener(periodBtns);
   controller.submitAlarmFormListener(alarmForm);

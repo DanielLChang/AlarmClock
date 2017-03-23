@@ -10,13 +10,11 @@ body {
   color: #303133; /*slate*/
 }
 
-button:hover {
-  cursor: pointer;
-}
+button:hover { cursor: pointer }
 
-button:focus:hover {
-  outline: 0;
-}
+button:focus { outline: 0 }
+
+input:focus { outline: 0 }
 
 h1 {
   font-size: 40px;
@@ -106,13 +104,9 @@ form {
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
-.alarm-period:hover {
-  background-color: #7396FD;
-}
+.alarm-period:hover { background-color: #7396FD }
 
-.active-period {
-  background-color: #7396FD;
-}
+.active-period { background-color: #7396FD }
 
 .alarm-submit-btn {
   height: 40%;
@@ -130,6 +124,4 @@ form {
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
-.alarm-submit-btn:hover {
-  background-color: #7887E8;
-}
+.alarm-submit-btn:hover { background-color: #7887E8 }
