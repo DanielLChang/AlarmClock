@@ -51,8 +51,9 @@ h1 {
 .alarm-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 140px;
+  width: 40%;
 }
 
 form {
@@ -74,8 +75,9 @@ form {
 .alarm-input {
   width: 75px;
   height: 100%;
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 2px;
   margin-right: 5px;
   text-align: center;
   border: 0;
@@ -94,8 +96,9 @@ form {
 .alarm-period {
   width: 100px;
   height: 100%;
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 2px;
   margin-left: 5px;
   background-color: #bdbfc1;
   color: #f9fafc;
@@ -114,9 +117,9 @@ form {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 2px;
   background-color: #7396FD;
   color: #f9fafc;
   border: 0;
@@ -125,3 +128,25 @@ form {
 }
 
 .alarm-submit-btn:hover { background-color: #7887E8 }
+
+.alarm-list-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 375px;
+}
+
+.alarm-el {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: #A2C7E8;
+  color: #303133;
+  font-size: 20px;
+  line-height: 50px;
+}

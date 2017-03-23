@@ -17,7 +17,7 @@ AlarmView.prototype.displayAlarms = function(alarms) {
     let alarm = alarms[i];
     let alarmEl = document.createElement('div');
     alarmEl.classList.add('alarm-el');
-    alarmEl.innerText = alarm.time.toLocaleTimeString('en-US');
+    alarmEl.innerText = alarm.toString();
     this.alarmList.appendChild(alarmEl);
   }
 }
