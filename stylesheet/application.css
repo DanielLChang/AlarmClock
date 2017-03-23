@@ -52,7 +52,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px;
+  justify-content: center;
   width: 40%;
 }
 
@@ -112,7 +112,7 @@ form {
 .active-period { background-color: #7396FD }
 
 .alarm-submit-btn {
-  height: 40%;
+  height: 100px;
   width: 100%;
   justify-content: center;
   align-items: center;
