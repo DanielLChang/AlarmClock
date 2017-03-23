@@ -1,6 +1,7 @@
 function Alarm(hr, min, period) {
   this.hr = hr;
   this.min = min;
+  this.period = period;
   this.time = new Date();
 
   if (hr === 12 && period === 'AM') {

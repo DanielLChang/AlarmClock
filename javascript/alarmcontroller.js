@@ -5,7 +5,6 @@ function AlarmController(alarmApp, alarmView) {
 AlarmController.prototype.addPeriodBtnListener = function(el) {
   el.addEventListener('click', function(e) {
     e.preventDefault();
-    console.log(e.target.value);
     this.alarmApp.period = e.target.value;
   }.bind(this));
   console.log(this.alarmApp.period);

@@ -17,7 +17,9 @@ AlarmApp.prototype.isUnique = function(alarm) {
   let length = this.alarmList.length;
   for (let i = 0; i < length; i++) {
     let curr = this.alarmList[i];
-    if (curr.hr === alarm.hr && curr.min === alarm.min) return false;
+    if (curr.hr === alarm.hr
+      && curr.min === alarm.min
+      && curr.period === alarm.period) return false;
   }
   return true;
 }
