@@ -21,6 +21,7 @@ function Alarm(hr, min, period) {
 Alarm.prototype.matches = function(timeToCheck) {
   return this.time.getHours() === timeToCheck.getHours()
     && this.time.getMinutes() === timeToCheck.getMinutes()
+    && this.time.getSeconds() === timeToCheck.getSeconds()
 }
 
 Alarm.prototype.isValid = function() {
