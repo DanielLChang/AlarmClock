@@ -14,7 +14,7 @@ export default class AlarmApp {
   // Check if Alarm is not already set
   isUnique(alarm) {
     if (this.alarmList.length === 0) return true;
-    let length = this.alarmList.length;
+    const length = this.alarmList.length;
     for (let i = 0; i < length; i++) {
       let curr = this.alarmList[i];
       if (curr.hr === alarm.hr
@@ -26,8 +26,8 @@ export default class AlarmApp {
 
   // Check if any Alarm has been met
   checkAlarms() {
-    let time = new Date();
-    let length = this.alarmList.length;
+    const time = new Date();
+    const length = this.alarmList.length;
 
     for (let i = 0; i < length; i++) {
       let alarm = this.alarmList[i];
@@ -45,8 +45,8 @@ export default class AlarmApp {
 
   // Remove specific Alarm from AlarmList
   removeAlarm(idx) {
-    let beforeIdx = this.alarmList.slice(0, idx);
-    let afterIdx = this.alarmList.slice(idx + 1);
+    const beforeIdx = this.alarmList.slice(0, idx);
+    const afterIdx = this.alarmList.slice(idx + 1);
     if (idx === 0) {
       this.alarmList = afterIdx;
     } else {

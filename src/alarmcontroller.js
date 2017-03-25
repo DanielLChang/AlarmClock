@@ -20,10 +20,10 @@ export default class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      let hr = parseInt(e.target.alarmHr.value);
-      let min = parseInt(e.target.alarmMin.value);
-      let period = this.alarmApp.period;
-      let newAlarm = new Alarm(hr, min, period);
+      const hr = parseInt(e.target.alarmHr.value);
+      const min = parseInt(e.target.alarmMin.value);
+      const period = this.alarmApp.period;
+      const newAlarm = new Alarm(hr, min, period);
 
       // Only add if is valid time and not already existed
       if (newAlarm.isValid()) {
@@ -43,9 +43,9 @@ export default class AlarmController {
   // If met, alert and remove
   checkAlarmListener() {
     setInterval(() => {
-      let idx = this.alarmApp.checkAlarms();
+      const idx = this.alarmApp.checkAlarms();
       if (idx >= 0) {
-        let alarm = this.alarmApp.alarmList[idx];
+        const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
         this.alarmApp.removeAlarm(idx)
         this.alarmView.displayAlarms(this.alarmApp.alarmList);

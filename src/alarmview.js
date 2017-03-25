@@ -28,7 +28,7 @@ export default class AlarmView {
 
   // Create Alarm Element
   createAlarmEl(text) {
-    let alarmEl = document.createElement('div');
+    const alarmEl = document.createElement('div');
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);

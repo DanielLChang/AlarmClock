@@ -87,7 +87,7 @@ class AlarmApp {
   // Check if Alarm is not already set
   isUnique(alarm) {
     if (this.alarmList.length === 0) return true;
-    let length = this.alarmList.length;
+    const length = this.alarmList.length;
     for (let i = 0; i < length; i++) {
       let curr = this.alarmList[i];
       if (curr.hr === alarm.hr
@@ -99,8 +99,8 @@ class AlarmApp {
 
   // Check if any Alarm has been met
   checkAlarms() {
-    let time = new Date();
-    let length = this.alarmList.length;
+    const time = new Date();
+    const length = this.alarmList.length;
 
     for (let i = 0; i < length; i++) {
       let alarm = this.alarmList[i];
@@ -118,8 +118,8 @@ class AlarmApp {
 
   // Remove specific Alarm from AlarmList
   removeAlarm(idx) {
-    let beforeIdx = this.alarmList.slice(0, idx);
-    let afterIdx = this.alarmList.slice(idx + 1);
+    const beforeIdx = this.alarmList.slice(0, idx);
+    const afterIdx = this.alarmList.slice(idx + 1);
     if (idx === 0) {
       this.alarmList = afterIdx;
     } else {
@@ -159,10 +159,10 @@ class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      let hr = parseInt(e.target.alarmHr.value);
-      let min = parseInt(e.target.alarmMin.value);
-      let period = this.alarmApp.period;
-      let newAlarm = new __WEBPACK_IMPORTED_MODULE_0__alarm_js__["a" /* default */](hr, min, period);
+      const hr = parseInt(e.target.alarmHr.value);
+      const min = parseInt(e.target.alarmMin.value);
+      const period = this.alarmApp.period;
+      const newAlarm = new __WEBPACK_IMPORTED_MODULE_0__alarm_js__["a" /* default */](hr, min, period);
 
       // Only add if is valid time and not already existed
       if (newAlarm.isValid()) {
@@ -182,9 +182,9 @@ class AlarmController {
   // If met, alert and remove
   checkAlarmListener() {
     setInterval(() => {
-      let idx = this.alarmApp.checkAlarms();
+      const idx = this.alarmApp.checkAlarms();
       if (idx >= 0) {
-        let alarm = this.alarmApp.alarmList[idx];
+        const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
         this.alarmApp.removeAlarm(idx)
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
@@ -231,7 +231,7 @@ class AlarmView {
 
   // Create Alarm Element
   createAlarmEl(text) {
-    let alarmEl = document.createElement('div');
+    const alarmEl = document.createElement('div');
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);
@@ -307,7 +307,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // Current Time
 const clock = () => {
-  let time = new Date();
+  const time = new Date();
   document.getElementById('clock').innerText =
     time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);
