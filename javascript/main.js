@@ -1,3 +1,5 @@
+// Main file to set up alarm clock app
+
 function main() {
   let alarmForm = document.getElementById('alarm-form');
   let activePeriodBtn = document.getElementById('am-btn');
@@ -10,7 +12,7 @@ function main() {
 
   controller.addPeriodBtnListener(periodBtns);
   controller.submitAlarmFormListener(alarmForm);
-  controller.addAlarmListener();
+  controller.checkAlarmListener();
 }
 
 main();

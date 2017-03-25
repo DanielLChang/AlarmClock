@@ -1,3 +1,5 @@
+// Current Time
+
 function Clock() {
   this.time = new Date();
 
