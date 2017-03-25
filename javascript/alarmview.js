@@ -15,15 +15,20 @@ AlarmView.prototype.selectPeriodBtn = function(el){
 
 // Display alarms set
 AlarmView.prototype.displayAlarms = function(alarms) {
-  if (alarms.length === 0) return;
   // Reset display
   this.alarmList.innerText = '';
+  if (alarms.length === 0) return this.createAlarmEl('No Alarms');
 
   for (let i = 0; i < alarms.length; i++) {
     let alarm = alarms[i];
-    let alarmEl = document.createElement('div');
-    alarmEl.classList.add('alarm-el');
-    alarmEl.innerText = alarm.time.toLocaleTimeString();
-    this.alarmList.appendChild(alarmEl);
+    this.createAlarmEl(alarm.toString());
   }
+}
+
+// Create Alarm Element
+AlarmView.prototype.createAlarmEl = function(text) {
+  let alarmEl = document.createElement('div');
+  alarmEl.classList.add('alarm-el');
+  alarmEl.innerText = text;
+  this.alarmList.appendChild(alarmEl);
 }

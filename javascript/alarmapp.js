@@ -46,5 +46,9 @@ AlarmApp.prototype.alertAlarm = function(alarm) {
 AlarmApp.prototype.removeAlarm = function(idx) {
   let beforeIdx = this.alarmList.slice(0, idx);
   let afterIdx = this.alarmList.slice(idx + 1);
-  this.alarmList = beforeIdx.concat(afterIdx);
+  if (idx === 0) {
+    this.alarmList = afterIdx;
+  } else {
+    this.alarmList = beforeIdx.concat(afterIdx);
+  }
 }
