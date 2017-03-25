@@ -7,7 +7,7 @@ export default class Alarm {
     this.period = period;
     this.time = new Date();
 
-    // Set time to 12 Hour Format
+    // Set Alarm time to 24 Hour Format
     if (hr === 12 && period === 'AM') {
       this.time.setHours(0);
     } else if (hr === 12 && period === 'PM') {
@@ -24,8 +24,8 @@ export default class Alarm {
   // Check if alarms match
   matches(timeToCheck) {
     return this.time.getHours() === timeToCheck.getHours()
-    && this.time.getMinutes() === timeToCheck.getMinutes()
-    && this.time.getSeconds() === timeToCheck.getSeconds()
+      && this.time.getMinutes() === timeToCheck.getMinutes()
+      && this.time.getSeconds() === timeToCheck.getSeconds()
   }
 
   // Check if alarm is valid input

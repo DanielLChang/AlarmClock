@@ -256,7 +256,7 @@ class Alarm {
     this.period = period;
     this.time = new Date();
 
-    // Set time to 12 Hour Format
+    // Set Alarm time to 24 Hour Format
     if (hr === 12 && period === 'AM') {
       this.time.setHours(0);
     } else if (hr === 12 && period === 'PM') {
@@ -273,8 +273,8 @@ class Alarm {
   // Check if alarms match
   matches(timeToCheck) {
     return this.time.getHours() === timeToCheck.getHours()
-    && this.time.getMinutes() === timeToCheck.getMinutes()
-    && this.time.getSeconds() === timeToCheck.getSeconds()
+      && this.time.getMinutes() === timeToCheck.getMinutes()
+      && this.time.getSeconds() === timeToCheck.getSeconds()
   }
 
   // Check if alarm is valid input
@@ -306,16 +306,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// Current Time
+const clock = () => {
+  let time = new Date();
+  document.getElementById('clock').innerText =
+    time.toLocaleTimeString('en-US');
+  setTimeout(clock, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Run clock on one second interval
+  clock();
+
+  // Grab DOM elements
   const alarmForm = document.getElementById('alarm-form');
   const activePeriodBtn = document.getElementById('am-btn');
   const periodBtns = document.getElementById('alarm-period-btns');
   const alarmList = document.getElementById('alarm-list');
 
+  // Initialize Components
   const app = new __WEBPACK_IMPORTED_MODULE_0__alarmapp_js__["a" /* default */]();
   const view = new __WEBPACK_IMPORTED_MODULE_1__alarmview_js__["a" /* default */](activePeriodBtn, alarmList);
   const controller = new __WEBPACK_IMPORTED_MODULE_2__alarmcontroller_js__["a" /* default */](app, view);
 
+  // Add Listeners
   controller.addPeriodBtnListener(periodBtns);
   controller.submitAlarmFormListener(alarmForm);
   controller.checkAlarmListener();
