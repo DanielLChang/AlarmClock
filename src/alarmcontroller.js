@@ -7,7 +7,6 @@ export default class AlarmController {
     this.alarmView = alarmView;
   }
 
-
   // Listener to select period AM/PM
   addPeriodBtnListener(el) {
     el.addEventListener('click', (e) => {
