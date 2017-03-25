@@ -15,6 +15,7 @@ export default class AlarmApp {
   isUnique(alarm) {
     if (this.alarmList.length === 0) return true;
     const length = this.alarmList.length;
+
     for (let i = 0; i < length; i++) {
       let curr = this.alarmList[i];
       if (curr.hr === alarm.hr
@@ -47,6 +48,7 @@ export default class AlarmApp {
   removeAlarm(idx) {
     const beforeIdx = this.alarmList.slice(0, idx);
     const afterIdx = this.alarmList.slice(idx + 1);
+    
     if (idx === 0) {
       this.alarmList = afterIdx;
     } else {

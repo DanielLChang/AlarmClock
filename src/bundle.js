@@ -88,6 +88,7 @@ class AlarmApp {
   isUnique(alarm) {
     if (this.alarmList.length === 0) return true;
     const length = this.alarmList.length;
+
     for (let i = 0; i < length; i++) {
       let curr = this.alarmList[i];
       if (curr.hr === alarm.hr
@@ -120,6 +121,7 @@ class AlarmApp {
   removeAlarm(idx) {
     const beforeIdx = this.alarmList.slice(0, idx);
     const afterIdx = this.alarmList.slice(idx + 1);
+    
     if (idx === 0) {
       this.alarmList = afterIdx;
     } else {
@@ -183,6 +185,7 @@ class AlarmController {
   checkAlarmListener() {
     setInterval(() => {
       const idx = this.alarmApp.checkAlarms();
+      
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
@@ -308,6 +311,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Current Time
 const clock = () => {
   const time = new Date();
+  
   document.getElementById('clock').innerText =
     time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);

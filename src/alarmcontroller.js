@@ -44,6 +44,7 @@ export default class AlarmController {
   checkAlarmListener() {
     setInterval(() => {
       const idx = this.alarmApp.checkAlarms();
+      
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
