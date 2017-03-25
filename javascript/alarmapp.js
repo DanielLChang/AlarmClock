@@ -31,7 +31,7 @@ AlarmApp.prototype.checkAlarms = function() {
   for (let i = 0; i < length; i++) {
     let alarm = this.alarmList[i];
     if (alarm.matches(time)) {
-      return true;
+      return i;
     }
   }
   return false;

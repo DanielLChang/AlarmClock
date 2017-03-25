@@ -42,7 +42,7 @@ AlarmController.prototype.submitAlarmFormListener = function(el) {
 AlarmController.prototype.checkAlarmListener = function() {
   setInterval(function() {
     let idx = this.alarmApp.checkAlarms();
-    if (idx) {
+    if (Number.isInteger(idx)) {
       let alarm = this.alarmApp.alarmList[idx];
       this.alarmApp.alertAlarm(alarm);
       this.alarmApp.removeAlarm(idx)
