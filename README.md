@@ -16,7 +16,7 @@ This application is available online at https://daniellchang.github.io/AlarmCloc
 
 ## Build/Usage Instructions
 
-Simply download the project folder and open index.html to view the application.
+Since there are multiple Javascript files, instead of explicitly listing each one in the HTML document, Webpack is used to bundle the modules. Each source file will import their dependencies at the top and set their own export. The bundle is included in the src folder but if need be, simply run `webpack` to bundle the required files and then open `index.html` in your browser to use the application.
 
 ## Future Implementations
 
