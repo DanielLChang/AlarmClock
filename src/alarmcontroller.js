@@ -31,10 +31,10 @@ export default class AlarmController {
           this.alarmApp.addAlarm(newAlarm);
           this.alarmView.displayAlarms(this.alarmApp.alarmList);
         } else {
-          alert("Alarm already exists");
+          alert('Alarm already exists');
         }
       } else {
-        alert("Invalid input");
+        alert('Invalid input');
       }
     });
   }
@@ -44,7 +44,7 @@ export default class AlarmController {
   checkAlarmListener() {
     setInterval(() => {
       const idx = this.alarmApp.checkAlarms();
-      
+
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);

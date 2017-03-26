@@ -90,11 +90,12 @@ class AlarmApp {
     const length = this.alarmList.length;
 
     for (let i = 0; i < length; i++) {
-      let curr = this.alarmList[i];
+      const curr = this.alarmList[i];
       if (curr.hr === alarm.hr
         && curr.min === alarm.min
         && curr.period === alarm.period) return false;
     }
+
     return true;
   }
 
@@ -104,11 +105,12 @@ class AlarmApp {
     const length = this.alarmList.length;
 
     for (let i = 0; i < length; i++) {
-      let alarm = this.alarmList[i];
+      const alarm = this.alarmList[i];
       if (alarm.matches(time)) {
         return i;
       }
     }
+    
     return -1;
   }
 
@@ -121,7 +123,7 @@ class AlarmApp {
   removeAlarm(idx) {
     const beforeIdx = this.alarmList.slice(0, idx);
     const afterIdx = this.alarmList.slice(idx + 1);
-    
+
     if (idx === 0) {
       this.alarmList = afterIdx;
     } else {
@@ -172,10 +174,10 @@ class AlarmController {
           this.alarmApp.addAlarm(newAlarm);
           this.alarmView.displayAlarms(this.alarmApp.alarmList);
         } else {
-          alert("Alarm already exists");
+          alert('Alarm already exists');
         }
       } else {
-        alert("Invalid input");
+        alert('Invalid input');
       }
     });
   }
@@ -185,7 +187,7 @@ class AlarmController {
   checkAlarmListener() {
     setInterval(() => {
       const idx = this.alarmApp.checkAlarms();
-      
+
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
@@ -227,7 +229,7 @@ class AlarmView {
     if (alarms.length === 0) return this.createAlarmEl('No Alarms');
 
     for (let i = 0; i < alarms.length; i++) {
-      let alarm = alarms[i];
+      const alarm = alarms[i];
       this.createAlarmEl(alarm.toString());
     }
   }

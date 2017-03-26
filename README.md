@@ -1,6 +1,6 @@
 # Alarm Clock
 
-This simple web application is written using vanilla Javascript. The application showcases a 12 HR format clock (in en-US). Users are able to set multiple alarms and are alerted when an alarm time is met.
+This simple web application is written using vanilla Javascript (ES6). The application showcases a 12 HR format clock (in en-US). Users are able to set multiple alarms and are alerted when an alarm time is met.
 
 ## Live Page
 
@@ -18,7 +18,7 @@ This application is available online at https://daniellchang.github.io/AlarmCloc
 
 To install webpack, run `npm install -g webpack`
 
-Since there are multiple Javascript files, instead of explicitly listing each one in the HTML document, Webpack is used to bundle the modules. Each source file will import their dependencies at the top and set their own export. The bundle is included in the src folder but if need be, simply run `webpack` to bundle the required files and then open `index.html` in your browser to use the application.
+Since there are multiple Javascript files, instead of explicitly listing each one in the HTML document, Webpack is used to bundle the modules. Each source file will import their dependencies at the top and set their own export. The bundle is included in the `src` folder but if need be, simply run `webpack` to bundle the required files and then open `index.html` in your browser to use the application.
 
 ## Future Implementations
 
@@ -26,3 +26,4 @@ Since there are multiple Javascript files, instead of explicitly listing each on
 - Edit/Delete alarms
 - Switch from digital to analog clock format
 - Implement database to store alarms
+- Mobile friendly

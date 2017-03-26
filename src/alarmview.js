@@ -21,7 +21,7 @@ export default class AlarmView {
     if (alarms.length === 0) return this.createAlarmEl('No Alarms');
 
     for (let i = 0; i < alarms.length; i++) {
-      let alarm = alarms[i];
+      const alarm = alarms[i];
       this.createAlarmEl(alarm.toString());
     }
   }
