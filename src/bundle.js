@@ -313,7 +313,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Current Time
 const clock = () => {
   const time = new Date();
-  
+
   document.getElementById('clock').innerText =
     time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Grab DOM elements
   const alarmForm = document.getElementById('alarm-form');
   const activePeriodBtn = document.getElementById('am-btn');
-  const periodBtns = document.getElementById('alarm-period-btns');
+  const periodBtns = document.getElementsByClassName('alarm-period');
   const alarmList = document.getElementById('alarm-list');
 
   // Initialize Components
@@ -335,7 +335,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const controller = new __WEBPACK_IMPORTED_MODULE_2__alarmcontroller_js__["a" /* default */](app, view);
 
   // Add Listeners
-  controller.addPeriodBtnListener(periodBtns);
+  // Add Listener to each btn and not container
+  for (let i = 0; i < periodBtns.length; i++) {
+    const btn = periodBtns[i];
+    controller.addPeriodBtnListener(btn);
+  }
   controller.submitAlarmFormListener(alarmForm);
   controller.checkAlarmListener();
 });
