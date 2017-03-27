@@ -20,8 +20,10 @@ export default class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      const hr = parseInt(e.target.alarmHr.value);
-      const min = parseInt(e.target.alarmMin.value);
+      
+      // Check if inputs are valid
+      const hr = this.isValid(e.target.alarmHr.value);
+      const min = this.isValid(e.target.alarmMin.value);
       const period = this.alarmApp.period;
       const newAlarm = new Alarm(hr, min, period);
 
@@ -52,5 +54,10 @@ export default class AlarmController {
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
       }
     }, 1000);
+  }
+
+  // Short helper method to check if input is valid number
+  isValid(input) {
+    if (!isNaN(input)) return parseInt(input);
   }
 }

@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Grab DOM elements
   const alarmForm = document.getElementById('alarm-form');
   const activePeriodBtn = document.getElementById('am-btn');
-  const periodBtns = document.getElementsByClassName('alarm-period');
   const alarmList = document.getElementById('alarm-list');
+  const periodBtns = document.getElementsByClassName('alarm-period');
 
   // Initialize Components
   const app = new AlarmApp();

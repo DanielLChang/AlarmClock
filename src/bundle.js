@@ -163,8 +163,10 @@ class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      const hr = parseInt(e.target.alarmHr.value);
-      const min = parseInt(e.target.alarmMin.value);
+      
+      // Check if inputs are valid
+      const hr = this.isValid(e.target.alarmHr.value);
+      const min = this.isValid(e.target.alarmMin.value);
       const period = this.alarmApp.period;
       const newAlarm = new __WEBPACK_IMPORTED_MODULE_0__alarm_js__["a" /* default */](hr, min, period);
 
@@ -195,6 +197,11 @@ class AlarmController {
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
       }
     }, 1000);
+  }
+
+  // Short helper method to check if input is valid number
+  isValid(input) {
+    if (!isNaN(input)) return parseInt(input);
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlarmController;
@@ -326,8 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Grab DOM elements
   const alarmForm = document.getElementById('alarm-form');
   const activePeriodBtn = document.getElementById('am-btn');
-  const periodBtns = document.getElementsByClassName('alarm-period');
   const alarmList = document.getElementById('alarm-list');
+  const periodBtns = document.getElementsByClassName('alarm-period');
 
   // Initialize Components
   const app = new __WEBPACK_IMPORTED_MODULE_0__alarmapp_js__["a" /* default */]();
