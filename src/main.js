@@ -10,7 +10,7 @@ const clock = () => {
   document.getElementById('clock').innerText =
     time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // Run clock on one second interval

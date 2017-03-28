@@ -20,7 +20,7 @@ export default class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       // Check if inputs are valid
       const hr = this.isValid(e.target.alarmHr.value);
       const min = this.isValid(e.target.alarmMin.value);
@@ -50,7 +50,7 @@ export default class AlarmController {
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
-        this.alarmApp.removeAlarm(idx)
+        this.alarmApp.removeAlarm(idx);
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
       }
     }, 1000);

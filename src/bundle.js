@@ -163,7 +163,7 @@ class AlarmController {
   submitAlarmFormListener(el) {
     el.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       // Check if inputs are valid
       const hr = this.isValid(e.target.alarmHr.value);
       const min = this.isValid(e.target.alarmMin.value);
@@ -193,7 +193,7 @@ class AlarmController {
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];
         this.alarmApp.alertAlarm(alarm);
-        this.alarmApp.removeAlarm(idx)
+        this.alarmApp.removeAlarm(idx);
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
       }
     }, 1000);
@@ -285,13 +285,13 @@ class Alarm {
   matches(timeToCheck) {
     return this.time.getHours() === timeToCheck.getHours()
       && this.time.getMinutes() === timeToCheck.getMinutes()
-      && this.time.getSeconds() === timeToCheck.getSeconds()
+      && this.time.getSeconds() === timeToCheck.getSeconds();
   }
 
   // Check if alarm is valid input
   isValid() {
     return this.hr > 0 && this.hr < 13
-      && this.min > -1 && this.min < 60
+      && this.min > -1 && this.min < 60;
   }
 
   // Convert to US string format
@@ -324,7 +324,7 @@ const clock = () => {
   document.getElementById('clock').innerText =
     time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // Run clock on one second interval

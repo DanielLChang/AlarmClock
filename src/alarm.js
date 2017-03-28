@@ -25,13 +25,13 @@ export default class Alarm {
   matches(timeToCheck) {
     return this.time.getHours() === timeToCheck.getHours()
       && this.time.getMinutes() === timeToCheck.getMinutes()
-      && this.time.getSeconds() === timeToCheck.getSeconds()
+      && this.time.getSeconds() === timeToCheck.getSeconds();
   }
 
   // Check if alarm is valid input
   isValid() {
     return this.hr > 0 && this.hr < 13
-      && this.min > -1 && this.min < 60
+      && this.min > -1 && this.min < 60;
   }
 
   // Convert to US string format
