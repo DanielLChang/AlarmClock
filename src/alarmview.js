@@ -37,6 +37,9 @@ export default class AlarmView {
 
   // Create Remove Button
   createRemoveBtn(el) {
-    
+    const removeEl = document.createElement('span');
+    removeEl.classList.add('remove-el');
+    removeEl.innerText = 'X';
+    el.appendChild(removeEl);
   }
 }

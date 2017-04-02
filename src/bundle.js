@@ -247,6 +247,15 @@ class AlarmView {
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);
+    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl);
+  }
+
+  // Create Remove Button
+  createRemoveBtn(el) {
+    const removeEl = document.createElement('span');
+    removeEl.classList.add('remove-el');
+    removeEl.innerText = 'X';
+    el.appendChild(removeEl);
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlarmView;
