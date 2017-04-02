@@ -32,5 +32,11 @@ export default class AlarmView {
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);
+    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl);
+  }
+
+  // Create Remove Button
+  createRemoveBtn(el) {
+    
   }
 }
