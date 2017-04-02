@@ -8,11 +8,11 @@ This application is available online at https://daniellchang.github.io/AlarmCloc
 
 ## Major Features
 
-- Displays current time with one second interval updates
-- Change time period (AM/PM)
-- Ability to set multiple alarms
-- Alerts and removes alarm when time is met
-- Submit checks inputs for validity and uniqueness
+- **DONE** Displays current time with one second interval updates
+- **DONE** Change time period (AM/PM)
+- **DONE** Ability to set multiple alarms
+- **DONE** Alerts and removes alarm when time is met
+- **DONE** Submit checks inputs for validity and uniqueness
 
 ## Build/Usage Instructions
 
@@ -22,8 +22,9 @@ Since there are multiple Javascript files, instead of explicitly listing each on
 
 ## Future Implementations
 
+- **DONE** Delete alarms
+- Edit alarms
 - Sort alarm times (Currently alarms are in an array. Checking for specific alarm time is O(n) since needs to check each alarm. Idea for this is to have times in a heap. Insertion would be log(n), finding min would be O(1)).
-- Edit/Delete alarms
 - Switch from digital to analog clock format
 - Implement database to store alarms
 - Mobile friendly
