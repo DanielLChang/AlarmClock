@@ -175,6 +175,9 @@ class AlarmController {
         if (this.alarmApp.isUnique(newAlarm)) {
           this.alarmApp.addAlarm(newAlarm);
           this.alarmView.displayAlarms(this.alarmApp.alarmList);
+
+          // Add remove alarm listeners
+          this.addRemoveListener();
         } else {
           alert('Alarm already exists');
         }
@@ -182,6 +185,21 @@ class AlarmController {
         alert('Invalid input');
       }
     });
+  }
+
+  addRemoveListener() {
+    const list = document.getElementsByClassName('alarm-el');
+    for (let i = 0; i < list.length; i++) {
+      const curr = list[i];
+      curr.addEventListener('click', (e) => {
+        const idx = e.target.getAttribute('key');
+        if (idx) {
+          this.alarmApp.removeAlarm(idx);
+          this.alarmView.displayAlarms(this.alarmApp.alarmList);
+          this.addRemoveListener();
+        }
+      });
+    }
   }
 
   // Listener on one second interval to check if Alarm has been met
@@ -237,31 +255,25 @@ class AlarmView {
 
     for (let i = 0; i < alarms.length; i++) {
       const alarm = alarms[i];
-      this.createAlarmEl(alarm.toString());
+      this.createAlarmEl(alarm.toString(), i);
     }
   }
 
   // Create Alarm Element
-  createAlarmEl(text) {
+  createAlarmEl(text, idx) {
     const alarmEl = document.createElement('div');
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);
-    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl);
+    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl, idx);
   }
 
   // Create Remove Button
-  createRemoveBtn(el) {
+  createRemoveBtn(el, idx) {
     const removeEl = document.createElement('i');
     removeEl.classList.add('fa', 'fa-times-circle', 'remove-el');
+    removeEl.setAttribute('key', idx);
     el.appendChild(removeEl);
-    this.addRemoveListener(removeEl);
-  }
-
-  addRemoveListener(el) {
-    el.addEventListener('click', (e) => {
-      console.log(e.target);
-    });
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlarmView;

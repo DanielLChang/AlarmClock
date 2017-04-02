@@ -22,30 +22,24 @@ export default class AlarmView {
 
     for (let i = 0; i < alarms.length; i++) {
       const alarm = alarms[i];
-      this.createAlarmEl(alarm.toString());
+      this.createAlarmEl(alarm.toString(), i);
     }
   }
 
   // Create Alarm Element
-  createAlarmEl(text) {
+  createAlarmEl(text, idx) {
     const alarmEl = document.createElement('div');
     alarmEl.classList.add('alarm-el');
     alarmEl.innerText = text;
     this.alarmList.appendChild(alarmEl);
-    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl);
+    if (text !== 'No Alarms') this.createRemoveBtn(alarmEl, idx);
   }
 
   // Create Remove Button
-  createRemoveBtn(el) {
+  createRemoveBtn(el, idx) {
     const removeEl = document.createElement('i');
     removeEl.classList.add('fa', 'fa-times-circle', 'remove-el');
+    removeEl.setAttribute('key', idx);
     el.appendChild(removeEl);
-    this.addRemoveListener(removeEl);
-  }
-
-  addRemoveListener(el) {
-    el.addEventListener('click', (e) => {
-      console.log(e.target);
-    });
   }
 }

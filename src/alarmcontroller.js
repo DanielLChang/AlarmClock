@@ -32,6 +32,9 @@ export default class AlarmController {
         if (this.alarmApp.isUnique(newAlarm)) {
           this.alarmApp.addAlarm(newAlarm);
           this.alarmView.displayAlarms(this.alarmApp.alarmList);
+
+          // Add remove alarm listeners
+          this.addRemoveListener();
         } else {
           alert('Alarm already exists');
         }
@@ -39,6 +42,21 @@ export default class AlarmController {
         alert('Invalid input');
       }
     });
+  }
+
+  addRemoveListener() {
+    const list = document.getElementsByClassName('alarm-el');
+    for (let i = 0; i < list.length; i++) {
+      const curr = list[i];
+      curr.addEventListener('click', (e) => {
+        const idx = e.target.getAttribute('key');
+        if (idx) {
+          this.alarmApp.removeAlarm(idx);
+          this.alarmView.displayAlarms(this.alarmApp.alarmList);
+          this.addRemoveListener();
+        }
+      });
+    }
   }
 
   // Listener on one second interval to check if Alarm has been met

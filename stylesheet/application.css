@@ -155,5 +155,9 @@ form {
 
 .remove-el {
   margin-left: 10px;
-  color: #f2526e;
+  color: #f91b26;
+}
+
+.remove-el:hover {
+  cursor: pointer;
 }
