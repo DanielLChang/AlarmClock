@@ -175,8 +175,6 @@ class AlarmController {
         if (this.alarmApp.isUnique(newAlarm)) {
           this.alarmApp.addAlarm(newAlarm);
           this.alarmView.displayAlarms(this.alarmApp.alarmList);
-
-          // Add remove alarm listeners
           this.addRemoveListener();
         } else {
           alert('Alarm already exists');
@@ -187,6 +185,7 @@ class AlarmController {
     });
   }
 
+  // Listener to remove Alarm
   addRemoveListener() {
     const list = document.getElementsByClassName('alarm-el');
     for (let i = 0; i < list.length; i++) {
@@ -213,6 +212,7 @@ class AlarmController {
         this.alarmApp.alertAlarm(alarm);
         this.alarmApp.removeAlarm(idx);
         this.alarmView.displayAlarms(this.alarmApp.alarmList);
+        this.addRemoveListener();
       }
     }, 1000);
   }
