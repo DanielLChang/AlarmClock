@@ -255,6 +255,13 @@ class AlarmView {
     const removeEl = document.createElement('i');
     removeEl.classList.add('fa', 'fa-times-circle', 'remove-el');
     el.appendChild(removeEl);
+    this.addRemoveListener(removeEl);
+  }
+
+  addRemoveListener(el) {
+    el.addEventListener('click', (e) => {
+      console.log(e.target);
+    });
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlarmView;

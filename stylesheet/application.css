@@ -154,5 +154,6 @@ form {
 }
 
 .remove-el {
+  margin-left: 10px;
   color: #f2526e;
 }
