@@ -110,7 +110,7 @@ class AlarmApp {
         return i;
       }
     }
-    
+
     return -1;
   }
 
@@ -121,8 +121,9 @@ class AlarmApp {
 
   // Remove specific Alarm from AlarmList
   removeAlarm(idx) {
-    const beforeIdx = this.alarmList.slice(0, idx);
-    const afterIdx = this.alarmList.slice(idx + 1);
+    const intIdx = parseInt(idx);
+    const beforeIdx = this.alarmList.slice(0, intIdx);
+    const afterIdx = this.alarmList.slice(intIdx + 1);
 
     if (idx === 0) {
       this.alarmList = afterIdx;
